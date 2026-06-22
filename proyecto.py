@@ -382,9 +382,69 @@ print(calcular_cubo(5))
 
 ### 22. Dada una lista numérica, obtén el producto total de los valores de dicha lista. Usa la función reduce().
 
+from functools import reduce
 
+def producto_valores(lista_producto):
+    """Función para calcular elproducto de los valores de una lista
 
+    Args:
+        lista_producto (list): Valores numericos
+    """
+    return(reduce(lambda x, y: x*y, lista_producto))
 
+print(producto_valores([1,2,3,4,5]))
+
+### 23. Concatena una lista de palabras. Usa la función reduce()
+
+from functools import reduce
+
+def concatenar_lista(lista_concatenar):
+    """Función para concatenar palabras de una lista mediante reduce()
+
+    Args:
+        lista_concatenar (list): Lista de string 
+
+    Returns:
+        str: Texto conformado al concatenar las palabras de la lista
+    """
+    return reduce(lambda x,y: x + " " + y, lista_concatenar)
+
+palabras_concatenar = ["Este", "es", "mi", "primer", "proyecto", "de", "Python"]
+print(concatenar_lista(palabras_concatenar))
+
+### 24. Calcula la diferencia total en los valores de una lista. Usa la función reduce()
+
+from functools import reduce
+
+def diferencia_total(lista_diferencia):
+    """Función que usa reduce para calcular la diferencia entre los valores de una lista
+
+    Args:
+        lista_diferencia (list): Lista de enteros
+
+    Returns:
+        int: Número que corresponde a la diferencia entre los valores de la lista
+    """
+    return reduce(lambda x,y: x - y, lista_diferencia)
+
+valores_diferencia = [2, 4, 6, 8, 10]
+print(diferencia_total(valores_diferencia))
+
+### 25. Función que cuente el número de caracteres en una cadena de texto dada.
+
+def contar_caracteres(texto):
+    """Función que cuenta los caracteres de una cadena d etexto excluyendo los espacios.
+
+    Args:
+        texto (str): Frase de tipo texto (str)
+
+    Returns:
+        int: Número resultado de la cuenta de caracteres
+    """
+    return len(texto.replace(" ", ""))
+
+frase = "Este es mi primer proyecto de Python con The Power"
+print(contar_caracteres(frase))
 
 
 
