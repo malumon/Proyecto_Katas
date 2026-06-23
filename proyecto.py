@@ -446,5 +446,33 @@ def contar_caracteres(texto):
 frase = "Este es mi primer proyecto de Python con The Power"
 print(contar_caracteres(frase))
 
+### 26. Función lambda que calcule el resto de la división entre dos números dados.
+
+resto_division = lambda x, y: x % y
+
+print (resto_division(10,3))
+print (resto_division(17,5))
+
+### 27. Función que calcule el promedio de una lista de números.
+
+def promedio_numeros(promedio_num):
+    """Función para calcular el promedio de una lista de números,
+
+    Args:
+        promedio_num (list): Lista de int o vacía
+
+    Returns:
+        float: Valor rsultado de calcular el promedio
+    """
+    if len(promedio_num) == 0  :
+        return 0
+        # Manejo de posible error donde se ejecute la función en una lista vacía
+
+    return sum(promedio_num) / len(promedio_num)
+
+nums = []
+print(promedio_numeros(nums))
+
+
 
 
