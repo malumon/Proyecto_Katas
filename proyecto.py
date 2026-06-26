@@ -473,6 +473,92 @@ def promedio_numeros(promedio_num):
 nums = []
 print(promedio_numeros(nums))
 
+### Función que busque y devuelva el primer elemento duplicado en una lista dada
+
+def primer_duplicado(lista_duplicados):
+    """Función que crea un set de elementos unicos mientras recorre una lista de valores, devolviendo el primer duplicado de la lista
+
+    Args:
+        lista_duplicados (list): Lista de valores con datos duplicados
+
+    Returns:
+        int: Primer valor duplicado de la lista
+    """
+    vistos = set()
+
+    for elemento in lista_duplicados:
+        if elemento in vistos:
+            return elemento
+        vistos.add(elemento)
+    return None
+
+valores_duplicados = [3, 7, 2, 5, 7, 2]
+print(primer_duplicado(valores_duplicados))
+
+### 29. Función que convierta una variable en una cadena de texto y enmascare todos los caracteres con el carácter '#', excepto los últimos cuatro.
+
+def enmascarar_valor(valor):
+    """Función para convertir en texto una variable y enmascarar valores
+
+    Args:
+        valor (int, str): La variable puede ser int o str, se convierte a str en la función
+
+    Returns:
+        str: Texto enmascarado
+    """
+    texto_enmascarado = str(valor)
+
+    if len(texto_enmascarado) <= 4:
+        return texto_enmascarado
+
+    return "#" * (len(texto_enmascarado) -4) + texto_enmascarado[-4:]
+
+print(enmascarar_valor(1144026096))
+print(enmascarar_valor("APELLIDO"))
+print(enmascarar_valor("abcd"))
+print(enmascarar_valor("abc"))
+
+### 30. Función que determine si dos palabras son anagramas, es decir, si están formadas por las mismas letras pero en diferente orden
+
+def anagramas(palabra1, palabra2):
+    """Función para determinar si dos palabras som anagramas
+
+    Args:
+        palabra1 (str): Primera palabra a comparar
+        palabra2 (str): Segunda palabra a comparar
+
+    Returns:
+        Bool: Devuelve True si son anagramas y False si no lo son
+    """
+    return sorted(palabra1.lower()) == sorted(palabra2.lower())
+
+print(anagramas("Roma", "Amor"))
+print(anagramas("Casa", "Libro"))
+
+### 31. Función que solicite al usuario ingresar una lista de nombres y luego solicite un nombre para buscar en esa lista. Si el nombre está en la lista, se imprime un mensaje indicando que fue encontrado, de lo contrario, se lanza una excepción.
+
+def listas_input ():
+    """Función que permite almacer los nombres ingresados en una lista, para después buscar el nombre que se ingrese en dicha lista.
+
+    Raises:
+        ValueError: Error en caso de que se busque un nombre que no esta en la lista. Se maneja la programación defensiva con el uso de try/except
+    """
+    nombres = input("Ingrese varios nombres separados por comas")
+    lista_nombres = [nombre.strip() for nombre in nombres.split(",")]
+
+    nombre_buscar = input("Introduce el nombre a buscar")
+
+    if nombre_buscar in lista_nombres:
+        print("El nombre está en la lista")
+    else:
+        raise ValueError ("Nombre no encontrado")
+
+try:
+    listas_input()
+except ValueError as e:
+    print(e)
+
+### 32. 
 
 
 
