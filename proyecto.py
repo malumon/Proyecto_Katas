@@ -558,7 +558,122 @@ try:
 except ValueError as e:
     print(e)
 
-### 32. 
+### 32.  Función que tome un nombre completo y una lista de empleados, busque el nombre completo en la lista y devuelve el puesto del empleado si está en la lista, de lo contrario, devuelve un mensaje indicando que la persona no trabaja aquí..
+
+def buscar_puesto(nombre_buscar, diccionario_empleados):
+    """Función que busca un nombre y devuelve el puesto
+
+    Args:
+        nombre_buscar (str): Nombre completo a buscar
+        diccionario_empleados (list): Lista de diccionarios  
+
+    Returns:
+        str: Devuelve el puesto de la persona si esta en la lista, o una frase indicando que la persona no trabaja allí
+    """
+    for empleado in diccionario_empleados:
+        if empleado["Nombre"].lower() == nombre_buscar.lower():
+            return  empleado["Puesto"]
+    return "La persona no trabaja aquí"
+
+empleados = [
+    {"Nombre": "Luisa Lopez" , "Puesto": "Data analyst"},
+    {"Nombre": "Diana Diaz", "Puesto": "Contador"},
+    {"Nombre": "Jorge Perez", "Puesto": "Abogado"}
+]
+print(buscar_puesto("jorge perez", empleados))
+print(buscar_puesto("Laura Rojas", empleados))
+
+### 33.  Crea una función lambda que sume elementos correspondientes de dos listas dadas. 
+
+lista_num1 = [1,3,5,7]
+lista_num2 = [20,30,40,50]
+
+suma_listas = list(map(lambda x,y : x + y, lista_num1, lista_num2))
+
+print(suma_listas)
+
+### 34. 
 
 
 
+
+
+### 35.
+
+
+
+
+
+### 36.
+
+
+
+
+
+
+### 37. 
+
+
+
+
+
+
+### 38. Genera un programa que nos diga si es de noche, de día o tarde según la hora proporcionada por el usuario.
+
+hora = int(input("Introduce la hora (0 - 23): "))
+
+if  6 <= hora < 14:
+    print("Es de día")
+elif 14 <= hora < 21:
+    print("Es de tarde")
+elif 21 <= hora <24 or  0 < hora <6:
+    print("Es de noche")
+else:
+    print("La hora introducida no es valida")
+
+### 39. Programa que determine qué calificación en texto tiene un alumno en base a su calificación numérica.
+
+calificacion_alumno = int(input("Introduce la calificación del alumno (0 - 100): "))
+
+if  calificacion_alumno <= 69:
+    print("Insuficiente")
+elif calificacion_alumno<= 79:
+    print("Bien")
+elif calificacion_alumno <= 89:
+    print("Muy bien")
+elif calificacion_alumno <= 100:
+    print("Excelente")
+else:
+    print("La calificación introducida no es valida")
+
+### 40. Función que tome dos parámetros: figura (una cadena que puede ser "rectangulo" , "circulo" o "triangulo" ) y datos (una tupla con los datos necesarios para calcular el área de la figura).
+
+def calcular_area(figura, datos):
+    """Función que calcula el área de una figura a partir de los datos necesarios
+
+    Args:
+        figura (str): Nombre de la figura
+        datos (tuple): Tupla con los datos necesarios para calcular el área
+
+    Returns:
+         float: Valor del área calculada según la figura
+    """
+    if figura == "rectangulo":
+        base, altura = datos
+        return base * altura
+    
+    elif figura == "circulo":
+        radio = datos[0]
+        return 3.1416 * (radio ** 2)
+    
+    elif figura == "triangulo":
+        base, altura = datos
+        return (base * altura) / 2
+    
+    else:
+        return "La figura no es valida"
+
+print(calcular_area("rectangulo", (5, 3)))
+print(calcular_area("circulo", (4,)))
+print(calcular_area("triangulo", (6, 2)))
+print(calcular_area("cuadrado", (4, 4)))
